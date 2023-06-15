@@ -39,8 +39,6 @@ img {
 
 :root {
   font-size: 62.5%;
-  --main-color: #008C45;
-  --highlight-color: #CD212A;
   --bg-color: #F4F9FF;
   --text-color: white;
   --text-size: 4rem;
@@ -94,7 +92,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #363636;
+    background-color: #000000;
     padding: 0 2rem;
     color: #F4F9FF;
     border-radius: 0 0 5px 5px;
