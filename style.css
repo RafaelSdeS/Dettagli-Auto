@@ -282,14 +282,19 @@ nav, header h2{
 
 #images img{
   width: 100%;
+  height: 40rem;
 }
 
 #about{
   padding: 0 3rem
 }
 
+#contacts .title {
+  margin: 3rem 0
+}
+
 #contacts i{
-  margin: 0 1.5rem
+  margin: 0 1.2rem
 }
 
 footer{
@@ -304,6 +309,11 @@ footer{
     --title-size: 4.5rem;
   }
 
+  h1:hover, h2:hover, p:hover, li:hover, i:hover, a:hover{
+    scale: 1
+  }
+  
+
   #services{
     padding: 4rem;
     height: 120vh;
@@ -314,7 +324,7 @@ footer{
   }
   
   .services-list > * {
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     justify-content: center;
   }
