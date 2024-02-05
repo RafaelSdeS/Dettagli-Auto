@@ -1,12 +1,8 @@
-/* Config */
-
+/* Resets */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
 }
 
@@ -17,6 +13,7 @@ body {
   color: var(--text-color);
 }
 
+/* Common Styles */
 img,
 picture,
 video,
@@ -26,7 +23,8 @@ svg {
   max-width: 100%;
 }
 
-button {
+button,
+a {
   background: none;
   color: inherit;
   border: none;
@@ -34,14 +32,8 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  text-decoration: none;
 }
-
-/* input,
-button,
-textarea,
-select {
-  font: inherit;
-} */
 
 p,
 h1,
@@ -51,19 +43,28 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  font-size: var(--text-size);
+  font-weight: 400;
+  color: var(--text-color);
 }
 
-a {
-  text-decoration: none;
+h1 {
+  font-size: var(--title-size);
+  font-weight: 900;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+h2 {
+  font-size: calc((var(--text-size) + var(--title-size)) / 2);
+  font-weight: 700;
 }
 
-/* Actual Styles */
+hr {
+  color: #cd212a;
+  width: 90%;
+  margin: 4rem auto;
+}
 
+/* Root Variables */
 :root {
   font-size: 62.5%;
   --bg-color: #f4f9ff;
@@ -241,16 +242,22 @@ header a {
 #services {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   height: 90vh;
   padding: 5rem;
   gap: 2rem;
-  margin: auto 10rem;
+  margin: auto;
 }
 
 #services h1 {
   text-align: center;
   margin: 0 0 3rem 0;
+}
+
+#services .images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 #services .services-images {
@@ -288,7 +295,7 @@ header a {
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s; /* Adjust as needed */
   z-index: 2;
-  font-size: var(--title-size);
+  font-size: var(--text-size);
 }
 
 #services .services-images .service-item:hover span {
@@ -398,10 +405,6 @@ footer > * > * {
     padding: 0 3rem;
     height: 50vh;
   }
-
-  #location iframe {
-    height: 40vh;
-  }
 }
 
 @media screen and (max-width: 800px) {
@@ -435,11 +438,37 @@ footer > * > * {
   }
 
   #services {
-    padding: 5rem;
+    height: auto;
+    padding: 0rem;
+  }
+
+  #services .images-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #services .services-images {
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #services .services-images .service-item img {
+    width: 20rem;
+    height: 15rem;
+  }
+
+  #services .services-images .service-item span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
   }
 
   #contacts {
-    height: 60vh;
+    height: auto;
   }
 
   #contacts .title {
@@ -448,6 +477,25 @@ footer > * > * {
 
   #contacts i {
     margin: 0 1.2rem;
+  }
+
+  #location {
+    height: auto;
+    padding: 2rem;
+  }
+
+  #location .location-content {
+    flex-direction: column;
+  }
+
+  #location iframe {
+    width: 60%;
+    height: 100%;
+  }
+
+  #location .location-content p {
+    width: 100%;
+    max-width: 100%;
   }
 
   footer {
@@ -462,7 +510,17 @@ footer > * > * {
     --title-size: 2.5rem;
   }
 
+  #services .services-images .service-item img {
+    width: 14rem;
+    height: 10rem;
+  }
+
   #contacts {
     padding: 0 2rem;
+  }
+
+  #location iframe {
+    width: 80%;
+    height: 100%;
   }
 }
